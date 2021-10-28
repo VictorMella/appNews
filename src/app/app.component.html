@@ -5,6 +5,6 @@
     ></app-formulario>
   </div>
   <div class="noticias">
-    <app-listado-noticias [noticias] = "lsnoticias"></app-listado-noticias>
+    <app-spinner *ngIf="loading"></app-spinner>
+    <app-listado-noticias [noticias] = "lsnoticias" *ngIf="!loading"></app-listado-noticias>
   </div>
-

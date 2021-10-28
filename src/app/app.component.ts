@@ -12,17 +12,21 @@ export class AppComponent implements OnInit {
   title = 'appNews';
   titulo: string;
   lsnoticias: INoticias[]
+  loading: boolean;
 
   constructor(private noticiaService: NoticiaService) {
     this.titulo = 'Buscador de noticias'
+    this.loading = false
   }
 
   ngOnInit() {
   }
 
   onHandleBusquedaSeleccionada(evento: IDtoBusqueda) {
+    this.loading = true
     this.noticiaService.getNoticias(evento).pipe().subscribe((resp: INoticias[]) => {
       this.lsnoticias = resp
+      this.loading = false
     })
   }
 }

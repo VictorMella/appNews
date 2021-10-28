@@ -1,7 +1,7 @@
 <div class="contenedor-cards">
   <div class="contenedor-card-item" *ngFor="let item of noticias">
     <div class="contenedor-card-item-wrapper">
-      <img [src]="item.urlToImage | defaultImage: 'news'" alt="" >
+      <img [src]="item.urlToImage | defaultImage: 'news'" alt="" error-src-img type="news" [loading]="lazy">
     </div>
     <div class="contenedor-card-item-news">
       <div class="source"><span> {{item.source.name}} </span> </div>
@@ -10,5 +10,4 @@
       <a [href]="item.url " target="_blank" >Ver Noticia</a>
     </div>
   </div>
-
 </div>
