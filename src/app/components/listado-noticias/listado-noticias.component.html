@@ -1,1 +1,14 @@
-<p>listado-noticias works!</p>
+<div class="contenedor-cards">
+  <div class="contenedor-card-item" *ngFor="let item of noticias">
+    <div class="contenedor-card-item-wrapper">
+      <img [src]="item.urlToImage | defaultImage: 'news'" alt="" >
+    </div>
+    <div class="contenedor-card-item-news">
+      <div class="source"><span> {{item.source.name}} </span> </div>
+      <div class="title"> {{item.title}}</div>
+      <div class="description">{{item.description}}</div>
+      <a [href]="item.url " target="_blank" >Ver Noticia</a>
+    </div>
+  </div>
+
+</div>

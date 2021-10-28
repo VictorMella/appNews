@@ -1,19 +1,14 @@
 <div class="busqueda">
-  <h3 class="title">Filtrar noticias por país o categoría</h3>
-  <ng-select [clearable]="false"
-
-  [placeholder]="'seleccione...'">
-  <!-- <ng-option *ngFor="let item of listProducts" [value]="item">{{item.name}}</ng-option> -->
-  </ng-select>
-
-  <ng-select [clearable]="false"
-
-  [placeholder]="'seleccione...'">
-  <!-- <ng-option *ngFor="let item of listProducts" [value]="item">{{item.name}}</ng-option> -->
-  </ng-select>
-
-  <button type="submit" class="btn ">
-    Buscar
-  </button>
-
+  <form (ngSubmit)="buscarNoticia()">
+    <h3 class="title">Filtrar noticias por país o categoría</h3>
+    <ng-select [clearable]="false" [placeholder]="'seleccione...'" [(ngModel)]="categoriaSeleccionada" [ngModelOptions]="{standalone: true}">
+      <ng-option *ngFor="let item of lsCategorias" [value]="item.value">{{item.nombre}}</ng-option>
+    </ng-select>
+    <ng-select [clearable]="false" [placeholder]="'seleccione...'" [(ngModel)]="paisSeleccionado" [ngModelOptions]="{standalone: true}">
+      <ng-option *ngFor="let item of lsPaises" [value]="item.value">{{item.nombre}}</ng-option>
+    </ng-select>
+    <button type="submit" class="btn ">
+      Buscar
+    </button>
+  </form >
 </div>

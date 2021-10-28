@@ -1,5 +1,10 @@
 <app-navbar [titulo]="titulo"></app-navbar>
   <div class="formulario">
-    <app-formulario></app-formulario>
+    <app-formulario
+    (handleBusquedaSeleccionada)="onHandleBusquedaSeleccionada($event)"
+    ></app-formulario>
+  </div>
+  <div class="noticias">
+    <app-listado-noticias [noticias] = "lsnoticias"></app-listado-noticias>
   </div>
 

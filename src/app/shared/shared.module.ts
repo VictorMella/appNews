@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,12 +10,16 @@ import { NgSelectModule } from '@ng-select/ng-select';
   declarations: [SpinnerComponent],
   imports: [
     CommonModule,
-    NgSelectModule
+    NgSelectModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     CommonModule,
     NgSelectModule,
-    SpinnerComponent
+    SpinnerComponent,
+    ReactiveFormsModule,
+    FormsModule
   ],
 })
 export class SharedModule { }
